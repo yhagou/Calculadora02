@@ -10,8 +10,22 @@ Projeto em andamento, visando a prática com a linguagem JavaScript e Html.
 - ``Html``
 -  ``CSS``
 
-## 📁 Acesso ao projeto
-Você pode acessar os arquivos do projeto clicando [aqui]([https://github.com/Hudson390/Calculadora-JS/blob/main).
+## 📁 NPM TEST
+# NPM Test job
+  npm-test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14' # You can specify the desired Node.js version
+      - name: Install Dependencies
+        run: npm install
+      - name: Run NPM Test
+        run: npm test
 
 # Autor
 
